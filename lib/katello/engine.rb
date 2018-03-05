@@ -174,6 +174,11 @@ module Katello
       ::DashboardController.class_eval do
         helper Katello::Concerns::DashboardHelperExtensions
       end
+
+      ::AuditsController.class_eval do
+        helper Katello::Concerns::AuditsHelperExtensions
+      end
+
       #Handle Smart Proxy items separately
       begin
         ::SmartProxy.send :include, Katello::Concerns::SmartProxyExtensions
